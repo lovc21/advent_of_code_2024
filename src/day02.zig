@@ -14,10 +14,12 @@ pub fn main() !void {
     std.debug.print("{s}", .{data});
     const a = 1;
 
-    if (util.isDigit(a)) {
-        std.debug.print("a is digit", .{});
+    const result = util.isDigit(a);
+
+    if (result.is_digit) {
+        std.debug.print("a is a digit with value {d}\n", .{result.value});
     } else {
-        std.debug.print("a is not a digit", .{});
+        std.debug.print("a is not a digit\n", .{});
     }
 }
 

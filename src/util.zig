@@ -1,8 +1,6 @@
 const std = @import("std");
 
-
-
-const DigitResu1lt = struct {
+const DigitResult = struct {
     is_digit: bool,
     value: u8,
 };
