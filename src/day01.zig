@@ -21,7 +21,6 @@ pub fn main() !void {
 
     var lines = std.mem.split(u8, data, "\n");
 
-    var i: usize = 0;
     while (lines.next()) |line| {
         const trimmed_line = std.mem.trim(u8, line, " \t\r\n");
         //print("Trimmed line: {s}\n", .{trimmed_line});
@@ -42,8 +41,6 @@ pub fn main() !void {
         } else {
             return error.InvalidData;
         }
-
-        i = i + 1;
     }
     sort(i32, a.items[0..], {}, comptime asc(i32));
     sort(i32, b.items[0..], {}, comptime asc(i32));
@@ -61,10 +58,10 @@ pub fn main() !void {
     }
     print("Sum of differences: {d}\n", .{sum});
 
+    // part 2
     var l: usize = 0;
     var k: usize = 0;
     var global_sum: i64 = 0;
-    // part 2
     while (l < a.items.len and k < b.items.len) {
         if (a.items[l] == b.items[k]) {
             const value = a.items[l];
