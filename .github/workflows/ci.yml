@@ -14,4 +14,4 @@ jobs:
           version: 0.13.0
 
       - name: Build
-        run: zig build day02
+        run: zig build day03
